@@ -5,15 +5,17 @@ public class Main {
         System.out.println("Main...");
 
         QueryTree tree = new QueryTree();
-        tree.setExpression("SELECT");
-        tree.getLeft().setExpression("SELECT");
-        tree.getLeft().getLeft().setExpression("*");
-        tree.getLeft().getRight().setExpression("FROM");
-        tree.getLeft().getRight().getLeft().setExpression("fields");
-        tree.getRight().setExpression("FROM");
-        tree.getRight().getLeft().setExpression("source");
+        tree.setExpression("+");
+        tree.getLeft().setExpression("+");
+        tree.getLeft().getRight().setExpression("1");
+        tree.getLeft().getLeft().setExpression("3");
+        tree.getRight().setExpression("*");
+        tree.getRight().getLeft().setExpression("3");
+        tree.getRight().getRight().setExpression("5");
 
         QueryBuilder builder = new QueryBuilder();
-        builder.executeTree(tree);
+        builder.buildTree(tree);
+
+        builder.printTotal();
     }
 }

@@ -2,7 +2,7 @@ package com.srikandi.qlbind;
 
 public class QueryBuilder {
 
-    public void executeTree(QueryTree queryTree) {
+    public void buildTree(QueryTree queryTree) {
         if (queryTree == null) {
             return;
         }
@@ -12,8 +12,8 @@ public class QueryBuilder {
              * TODO: Query-Process Mapping
              */
 
-            executeTree(queryTree.getLeft());
-            executeTree(queryTree.getRight());
+            buildTree(queryTree.getRight());
+            buildTree(queryTree.getLeft());
         }
     }
 }
