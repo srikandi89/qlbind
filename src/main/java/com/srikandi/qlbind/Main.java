@@ -13,7 +13,7 @@ public class Main {
         tree.getRight().getLeft().setExpression("3");
         tree.getRight().getRight().setExpression("5");
 
-        QueryBuilder builder = new QueryBuilder();
+        ArithmeticBuilder builder = new ArithmeticBuilder();
         builder.buildTree(tree);
 
         builder.printTotal();

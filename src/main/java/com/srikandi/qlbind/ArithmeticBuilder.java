@@ -12,10 +12,6 @@ public class ArithmeticBuilder {
         }
 
         if (queryTree.getExpression() != null) {
-            /**
-             * TODO: Query-Process Mapping
-             */
-
             buildTree(queryTree.getRight());
             buildTree(queryTree.getLeft());
 
@@ -46,6 +42,7 @@ public class ArithmeticBuilder {
                             total *= stack.pop();
                         }
                     }
+                    break;
                 default:
                     try {
                         int operand = Integer.parseInt(expr);
